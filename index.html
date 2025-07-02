@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-        <style>
+    <title>Portfolio Chatdaporn</title>
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -14,1093 +14,656 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
             min-height: 100vh;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
+        /* Header & Navigation */
         header {
-            padding: 20px 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 1.5rem;
             font-weight: bold;
+            color: white;
         }
 
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 2rem;
         }
 
         .nav-menu a {
             color: white;
             text-decoration: none;
-            transition: opacity 0.3s;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
         }
 
         .nav-menu a:hover {
-            opacity: 0.8;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+        }
+
+        section {
+            padding: 4rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         /* Hero Section */
+
         .hero {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
-            padding: 80px 0;
-            min-height: 60vh;
-        }
-
-        .hero-content {
-            flex: 1;
-            max-width: 600px;
+            justify-content: center;
+            text-align: center;
+            padding: 6rem 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            margin: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .hero h1 {
-            font-size: 48px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero .name {
-            color: #FFD700;
+            font-size: 3rem;
+            color: white;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .hero p {
-            font-size: 18px;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 20px;
-        }
-
-        .btn {
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-        }
-
-        .btn-primary {
-            background: white;
-            color: #667eea;
-            font-weight: bold;
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Profile Image */
-        .hero-image {
-            flex: 0 0 300px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
         }
 
         .profile-circle {
-            width: 200px;
-            height: 200px;
+            width: 250px;
+            height: 250px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.2);
-            border: 8px solid white;
+            border: 8px solid rgba(255, 255, 255, 0.3);
             display: flex;
             align-items: center;
             justify-content: center;
             backdrop-filter: blur(10px);
         }
 
+        .profile-circle img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #fff, 0 0 40px #764ba2;
+            transition: 0.3s;
+        }
+
         .profile-icon {
-            width: 80px;
-            height: 80px;
-            background: #4c63d2;
+            width: 120px;
+            height: 120px;
+            background: #6366f1;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-        }
-
-        .profile-icon::before {
-            content: '';
-            width: 30px;
-            height: 30px;
-            background: white;
-            border-radius: 50%;
-            position: absolute;
-            top: 15px;
-        }
-
-        .profile-icon::after {
-            content: '';
-            width: 50px;
-            height: 25px;
-            background: white;
-            border-radius: 25px 25px 0 0;
-            position: absolute;
-            bottom: 15px;
-        }
-
-        /* About Section */
-        .about {
-            background: #f8f9ff;
-            padding: 80px 0;
-            margin-top: 50px;
-        }
-
-        .about h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 50px;
-            color: #333;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 60px;
-            align-items: start;
-        }
-
-        .profile-section {
-            text-align: center;
-            position: relative;
-        }
-
-        .profile-card {
-            background: white;
-            border-radius: 20px;
-            padding: 40px 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .profile-card::before {
-            content: '';
-            position: absolute;
-            top: -50px;
-            left: -50px;
-            width: 100px;
-            height: 100px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 50px;
-            z-index: 0;
-        }
-
-        .profile-card::after {
-            content: '';
-            position: absolute;
-            bottom: -30px;
-            right: -30px;
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 40px;
-            z-index: 0;
-        }
-
-        .profile-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .profile-avatar {
-            width: 100px;
-            height: 100px;
-            background: #667eea;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            position: relative;
-        }
-
-        .profile-avatar::before {
-            content: '';
-            width: 35px;
-            height: 35px;
-            background: white;
-            border-radius: 50%;
-            position: absolute;
-            top: 20px;
-        }
-
-        .profile-avatar::after {
-            content: '';
-            width: 55px;
-            height: 28px;
-            background: white;
-            border-radius: 28px 28px 0 0;
-            position: absolute;
-            bottom: 18px;
-        }
-
-        .profile-name {
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 5px;
-        }
-
-        .profile-title {
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
             color: white;
-            transition: transform 0.3s;
+            font-size: 3rem;
         }
 
-        .social-link:hover {
-            transform: translateY(-2px);
+        /* Content Cards */
+        .content-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
         }
 
-        .social-link.facebook {
-            background: #1877f2;
-        }
-
-        .social-link.linkedin {
-            background: #0a66c2;
-        }
-
-        .social-link.github {
-            background: #333;
-        }
-
-        .about-text {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .about-text h3 {
-            font-size: 32px;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .about-text p {
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-
-        .info-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .info-tag {
-            background: #e8f0ff;
-            color: #667eea;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-        }
-
-        /* Skills Section */
-        .skills {
-            background: white;
-            padding: 80px 0;
-        }
-
-        .skills h2 {
-            text-align: center;
-            font-size: 36px;
-            margin-bottom: 50px;
-            color: #333;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .skill-card {
-            background: white;
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .skill-card:hover {
+        .content-card:hover {
             transform: translateY(-5px);
         }
 
-        .skill-icon {
-            width: 60px;
-            height: 60px;
-            background: #e8f0ff;
+        .content-card h3 {
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .content-card h4 {
+            color: white;
+        }
+        .content-card p,
+        .content-card li {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .skill-item .skill-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-item h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-item p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        .stars {
+            color: #FFD700;
+            font-size: 1.2rem;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
             border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-details h4 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .social-icons {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            color: #667eea;
-            font-size: 24px;
+            gap: 1rem;
+            margin-top: 0.5rem;
         }
 
-        .skill-name {
-            font-size: 18px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 10px;
+        .social-link {
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: transform 0.3s ease;
         }
 
-        .skill-desc {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 10px;
-            min-height: 32px;
+        .social-link:hover {
+            transform: scale(1.2);
         }
 
-        .skill-rating {
-            display: flex;
-            justify-content: center;
-            gap: 3px;
-        }
-
-        .star {
-            width: 16px;
-            height: 16px;
-            color: #ffc107;
-        }
-
-        .star.filled {
-            color: #ffc107;
-        }
-
-        .star.empty {
-            color: #e0e0e0;
-        }
-        
-        /* Footer Section */
+        /* Footer */
         footer {
-            background-color: #2c3e50;
-            color: #ecf0f1;
-            padding: 40px 0 20px 0;
-            margin-top: 50px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 2rem 0;
+            color: rgba(255, 255, 255, 0.8);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
         }
 
-        .footer-container {
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            flex-wrap: wrap;
+            margin-bottom: 1rem;
         }
 
-        .footer-info h3 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            font-weight: bold;
+        .footer-left h3 {
+            color: white;
+            margin-bottom: 0.5rem;
         }
 
-        .footer-info p {
-            font-size: 16px;
-            color: #bdc3c7;
+        .footer-left p {
+            color: rgba(255, 255, 255, 0.7);
         }
 
-        .footer-social {
+        .footer-right .social-links {
             display: flex;
-            gap: 15px;
+            gap: 1rem;
         }
 
-        .footer-social a {
-            color: #ecf0f1;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .footer-social a:hover {
-            color: #ffffff;
-        }
-
-        .footer-social svg {
-            width: 24px;
-            height: 24px;
-        }
-
-        footer hr {
-            border: 0;
-            height: 1px;
-            background-color: #34495e;
-            margin: 30px auto;
-            max-width: 1200px;
-        }
-
-        .footer-copyright {
+        .footer-bottom {
             text-align: center;
-            font-size: 14px;
-            color: #bdc3c7;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-
-        /* Responsive */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                gap: 40px;
+            .nav-menu {
+                display: none;
             }
 
             .hero h1 {
-                font-size: 36px;
+                font-size: 2rem;
             }
 
-            .nav-menu {
-                flex-direction: column;
-                gap: 15px;
+            .section-title {
+                font-size: 2rem;
             }
 
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .hero-image {
-                flex: none;
-            }
-
-            .about-content {
+            .skills-grid,
+            .projects-grid {
                 grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 20px;
-            }
-
-            .info-tags {
-                justify-content: center;
-            }
-
-            .social-links {
-                justify-content: center;
-            }
-            
-            .footer-container {
-                flex-direction: column;
-                text-align: center;
-                gap: 20px;
             }
         }
 
-        /* Smooth scrolling */
+        /* Smooth Scrolling */
         html {
             scroll-behavior: smooth;
         }
 
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 1s forwards;
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
         }
 
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
+        .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        }
+
+        .project-card-content {
+            padding: 1.5rem;
+        }
+
+        .project-card h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .project-card p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                gap: 1rem;
+                background-color: rgba(0, 0, 0, 0.8);
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                padding: 1rem;
+                border-radius: 10px;
+                z-index: 999;
+            }
+
+            .nav-menu.active {
+                display: flex;
             }
         }
-        .hamburger {
-    display: none;
-    font-size: 28px;
-    cursor: pointer;
-    color: white;
-}
-
-@media (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .nav-menu {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-top: 10px;
-    }
-}
     </style>
 </head>
 
 <body>
-    <div class="hamburger">&#9776;</div>
-    <div class="container">
-        <header>
-            <nav>
-                <div class="logo">My Portfolio</div>
-                <ul class="nav-menu">
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#softskills">Skills</a></li>
-                    <li><a href="#program-skills">Program Skills</a></li>
-                    <li><a href="#experience">Work Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">My Portfolio</div>
+            <div class="hamburger" id="hamburger">&#9776;</div>
+            <ul class="nav-menu">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#softskills">Skills</a></li>
+                <li><a href="#program-skills">Program Skills</a></li>
+                <li><a href="#experience">Work Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <section class="hero">
-            <div class="hero-content fade-in">
-                <h1>สวัสดีค่ะ, ผมชื่อ <span class="name">Your Name</span></h1>
-                <p>ตำแหน่งงานของคุณ | นักพัฒนาเว็บไซต์</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">ติดต่อผม</a>
-                    <a href="#about" class="btn btn-secondary">ดูผลงาน</a>
-                </div>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <div class="hero">
+            <div class="profile-circle">
+                <img src="\image\468800.jpg" alt="Profile"
+                    style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover;">
             </div>
-            <div class="hero-image fade-in">
-                <div class="profile-circle">
-                    <div class="profile-icon"></div>
+            <h1>สวัสดี! ฉันคือ ชัชฎาภรณ์ มูลซาว</h1>
+            <p>คอนเทนต์ครีเอเตอร์ (สาย TikTok/YouTube Shorts)</p>
+            <a href="#about" class="btn">เรียนรู้เพิ่มเติม</a>
+        </div>
+
+        <!-- About Me Section -->
+        <section id="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="content-card">
+                <h3>เกี่ยวกับฉัน</h3>
+                <p><h4> —  สวัสดีค่ะ ฉันคือกุ๊กกิ๊ก — </h4></p>
+                    <p><h4>คอนเทนต์ครีเอเตอร์ที่มีความคิดสร้างสรรค์และขับเคลื่อนด้วยแรงบันดาลใจในการเรียนรู้และพัฒนาอย่างไม่หยุดนิ่ง
+ฉันเชี่ยวชาญในการคิดไอเดีย ถ่ายทำ และตัดต่อวิดีโอสั้นสำหรับ TikTok และ YouTube Shorts โดยมุ่งเน้นการเล่าเรื่องที่ดึงดูดสายตาผ่านภาพและการตัดต่อที่มีพลัง เพื่อสร้างคอนเทนต์ที่น่าจดจำและเชื่อมโยงกับผู้ชมได้จริง</h4></p>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2 class="section-title">Education</h2>
+            <div class="content-card">
+                <h3>ปริญญาตรี สาขานิติศาสตร์</h3>
+                <p><strong>มหาวิทยาลัย:</strong> มหาวิทยาลัยรามคำแหง </p>
+                <p><strong>ปีการศึกษา:</strong> 2564 — ปัจจุบัน</p>
+                <p><strong>เกรดเฉลี่ย:</strong> 3.x</p>
+            </div>
+            <div class="content-card">
+                <h3>มัธยมศึกษาตอนปลาย ศิลป์-คำนวณ</h3>
+                <p><strong>โรงเรียน:</strong> ตากพิทยาคม</p>
+                <p><strong>ปีการศึกษา:</strong> 2561 — 2564</p>
+                <p><strong>เกรดเฉลี่ย:</strong> 3.x</p>
+            </div>
+        </section>
+
+        <!-- Soft Skills Section -->
+        <section id="softskills">
+            <h2 class="section-title">Professional Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h4>🎥 การไลฟ์สดและการแสดงออก</h4>
+                    <p>มั่นใจ ไม่เขินกล้อง แสดงออกได้ดีขณะไลฟ์สด</p>
+                </div>
+                <div class="skill-item">
+                    <h4>✂️ การตัดต่อและอัปโหลดวิดีโอ</h4>
+                    <p>สามารถตัดต่อ พากย์เสียง และเผยแพร่วิดีโอบน TikTok, Facebook, Instagram, YouTube Shorts, Lemon</p>
+                </div>
+                <div class="skill-item">
+                    <h4>🤝 การทำงานเป็นทีม</h4>
+                    <p>สามารถทำงานร่วมกับทีมได้อย่างมีประสิทธิภาพ</p>
+                </div>
+                <div class="skill-item">
+                    <h4>💡 ความคิดสร้างสรรค์</h4>
+                    <p>คิดนอกกรอบ เสนอไอเดียใหม่ ๆ ได้ในการทำงาน</p>
+                </div>
+                <div class="skill-item">
+                    <h4>📚 การเรียนรู้อย่างต่อเนื่อง</h4>
+                    <p>กระตือรือร้น พร้อมเรียนรู้และพัฒนาตนเองเสมอ</p>
+                </div>
+                <div class="skill-item">
+                    <h4>📈 การวิเคราะห์และออกแบบคอนเทนต์</h4>
+                    <p>สร้างคอนเทนต์ตรงกลุ่มเป้าหมาย ช่วยส่งเสริมยอดขาย</p>
+                </div>
+                <div class="skill-item">
+                    <h4>✅ ความรับผิดชอบ</h4>
+                    <p>ทำงานภายใต้ความกดดันได้ดีและใส่ใจรายละเอียดในการทำงาน</p>
                 </div>
             </div>
         </section>
-    </div>
 
-    <section class="about" id="about">
-        <div class="container">
-            <h2>เกี่ยวกับฉัน</h2>
-            <div class="about-content">
-                <div class="profile-section fade-in">
-                    <div class="profile-card">
-                        <div class="profile-content">
-                            <div class="profile-avatar"></div>
-                            <div class="profile-name">ชื่อของคุณ</div>
-                            <div class="profile-title">ตำแหน่งงานของคุณ</div>
-                            <div class="social-links">
-                                <a href="#" class="social-link facebook">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                        <path
-                                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                                    </svg>
-                                </a>
-                                <a href="#" class="social-link linkedin">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                        <path
-                                            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                                    </svg>
-                                </a>
-                                <a href="#" class="social-link github">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                        <path
-                                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-text fade-in">
-                    <h3>สวัสดีค่ะ!</h3>
-                    <p>ดีต่อพื่นที่สำคัญแนะนำตัวคุณ เล่าเกี่ยวกับตัวเอง ความสนใจ และเป้าหมายในอาชีพของคุณ
-                        คุณสามารถเขียนเรื่องราวสั่นๆ เกี่ยวกับประสบการณ์ ความเชี่ยวชาญ และสิ่งที่ให้คุณเป็นคุณ</p>
-                    <p>คุณสามารถเพิ่มข้อมูลเกี่ยวกับงานอดิเรกของคุณ สิ่งที่คุณชอบทำในเวลาว่าง หรือก็ที่มะพิเศษอื่นๆ
-                        ที่ไม่เกี่ยวข้องกับงานโดยตรง แต่แสดงให้เห็นตัวตนที่น่าสนใจของคุณ</p>
-                    <div class="info-tags">
-                        <div class="info-tag">อายุ: 25 ปี</div>
-                        <div class="info-tag">ที่อยู่: กรุงเทพมหานคร</div>
-                        <div class="info-tag">ภาษา: ไทย, อังกฤษ</div>
-                        <div class="info-tag">พร้อมทำงาน: ใช่</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="skills" id="education">
-        <div class="container">
-            <h2>การศึกษา</h2>
-            <div
-                style="background:#fff; border-radius:16px; box-shadow:0 4px 24px rgba(0,0,0,0.06); display:flex; align-items:center; padding:40px 32px; gap:32px; max-width:900px; margin:0 auto; margin-bottom:20px;">
-                <div
-                    style="background:#e8edfb; border-radius:12px; width:96px; height:96px; display:flex; align-items:center; justify-content:center;">
-                    <svg width="48" height="48" fill="none" viewBox="0 0 24 24">
-                        <path d="M12 3L2 8l10 5 10-5-10-5zm0 13c-4.418 0-8-1.79-8-4V9l8 4 8-4v3c0 2.21-3.582 4-8 4z"
-                            fill="#5a60e7" />
-                    </svg>
-                </div>
-                <div>
-                    <div style="font-size:22px; font-weight:bold; color:#222; margin-bottom:4px;">ปริญญาตรี
-                        สาขาวิชาของคุณ</div>
-                    <div style="color:#555; margin-bottom:2px;">มหาวิทยาลัยของคุณ</div>
-                    <div style="color:#888; font-size:15px; margin-bottom:10px;">2560 - 2564</div>
-                    <div style="color:#444; font-size:16px;">
-                        คุณสามารถเขียนรายละเอียดเกี่ยวกับการศึกษาของคุณ วิชาเอก โครงการพิเศษ
-                        หรือผลงานที่โดดเด่นในช่วงการศึกษา
-                    </div>
-                </div>
-            </div>
-
-            <div
-                style="background:#fff; border-radius:16px; box-shadow:0 4px 24px rgba(0,0,0,0.06); display:flex; align-items:center; padding:40px 32px; gap:32px; max-width:900px; margin:0 auto; ">
-                <div
-                    style="background:#e8edfb; border-radius:12px; width:96px; height:96px; display:flex; align-items:center; justify-content:center;">
-                    <svg width="48" height="48" fill="none" viewBox="0 0 24 24">
-                        <path d="M12 3L2 8l10 5 10-5-10-5zm0 13c-4.418 0-8-1.79-8-4V9l8 4 8-4v3c0 2.21-3.582 4-8 4z"
-                            fill="#5a60e7" />
-                    </svg>
-                </div>
-                <div>
-                    <div style="font-size:22px; font-weight:bold; color:#222; margin-bottom:4px;">ปริญญาตรี
-                        สาขาวิชาของคุณ</div>
-                    <div style="color:#555; margin-bottom:2px;">มหาวิทยาลัยของคุณ</div>
-                    <div style="color:#888; font-size:15px; margin-bottom:10px;">2560 - 2564</div>
-                    <div style="color:#444; font-size:16px;">
-                        คุณสามารถเขียนรายละเอียดเกี่ยวกับการศึกษาของคุณ วิชาเอก โครงการพิเศษ
-                        หรือผลงานที่โดดเด่นในช่วงการศึกษา
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <section class="skills" id="program-skills">
-        <div class="container">
-            <h2>ทักษะการใช้โปรแกรม</h2>
+        <!-- Program Skills Section -->
+        <section id="program-skills">
+            <h2 class="section-title">Program Skills</h2>
             <div class="skills-grid">
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                            <path
-                                d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.22,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.22,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.68 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z" />
-                        </svg>
-                    </div>
-                    <div class="skill-name">CapCut</div>
-                    <div class="skill-desc">ตัดต่อวิดีโอและสร้างคอนเทนต์สั้นสำหรับโซเชียลมีเดีย</div>
-                    <div class="skill-rating">
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star empty">★</span>
+                <div class="skill-item">
+                    <div class="skill-icon">🎬</div>
+                    <h4>CapCut</h4>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🎨</div>
+                    <h4>Photoshop</h4>
+                    <div class="stars">⭐⭐☆☆☆</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🎞️</div>
+                    <h4>Premiere Pro</h4>
+                    <div class="stars">⭐⭐☆☆☆</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">📁</div>
+                    <h4>MS Office</h4>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🎨</div>
+                    <h4>Canva</h4>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon">🎞️</div>
+                    <h4>Inshot</h4>
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Experience Section -->
+        <section id="experience">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="content-card">
+                <h3>Frontend Developer</h3>
+                <p><strong>บริษัท:</strong> [ชื่อบริษัท]</p>
+                <p><strong>ระยะเวลา:</strong> มกราคม 2023 - ปัจจุบัน</p>
+                <p><strong>หน้าที่:</strong> พัฒนาและดูแลเว็บไซต์ด้านหน้า ทำงานร่วมกับทีม UX/UI
+                    ในการแปลงดีไซน์เป็นเว็บไซต์ที่ใช้งานได้จริง</p>
+            </div>
+            <div class="content-card">
+                <h3>Web Developer Intern</h3>
+                <p><strong>บริษัท:</strong> [ชื่อบริษัท]</p>
+                <p><strong>ระยะเวลา:</strong> มิถุนายน 2022 - ธันวาคม 2022</p>
+                <p><strong>หน้าที่:</strong> ช่วยพัฒนาเว็บแอพพลิเคชั่น เรียนรู้เกี่ยวกับ best practices ในการเขียนโค้ด
+                </p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2 class="section-title"><a href="https://drive.google.com/drive/folders/1Fwn42TQkRDlCmhDWvSUFGh6Kb_JbWEVM" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: none;">Projects</a></h2> 
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="#" alt="Project 1">
+                    <div class="project-card-content">
+                        <h4>E-commerce Website</h4>
+                        <p>เว็บไซต์ขายของออนไลน์ที่สมบูรณ์ พัฒนาด้วย React และ Node.js</p>
                     </div>
                 </div>
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                            <path
-                                d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z" />
-                        </svg>
-                    </div>
-                    <div class="skill-name">Photoshop</div>
-                    <div class="skill-desc">ตกแต่งภาพ รีทัช และออกแบบกราฟิก</div>
-                    <div class="skill-rating">
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star empty">★</span>
-                        <span class="star empty">★</span>
+                <div class="project-card">
+                    <img src="#" alt="Project 2">
+                    <div class="project-card-content">
+                        <h4>Task Management App</h4>
+                        <p>แอพพลิเคชั่นจัดการงาน พัฒนาด้วย Vue.js และ Express.js</p>
                     </div>
                 </div>
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                            <path d="M12,2L13.09,8.26L22,9L13.09,9.74L12,16L10.91,9.74L2,9L10.91,8.26L12,2Z" />
-                        </svg>
-                    </div>
-                    <div class="skill-name">Illustrator</div>
-                    <div class="skill-rating">
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star empty">★</span>
-                    </div>
-                </div>
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                            <path
-                                d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M7,9H17V15H7V9M8,10V14H11V10H8M12,10V14H16V10H12Z" />
-                        </svg>
-                    </div>
-                    <div class="skill-name">Premiere Pro</div>
-                    <div class="skill-rating">
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star empty">★</span>
-                    </div>
-                </div>
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                            <path
-                                d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z" />
-                        </svg>
-                    </div>
-                    <div class="skill-name">MS Office</div>
-                    <div class="skill-rating">
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                    </div>
-                </div>
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                            <path
-                                d="M12,2C13.1,2 14,2.9 14,4C14,5.1 13.1,6 12,6C10.9,6 10,5.1 10,4C10,2.9 10.9,2 12,2M21,9V7L15,1H5C3.89,1 3,1.89 3,3V21A2,2 0 0,0 5,23H19A2,2 0 0,0 21,21V9M19,21H5V3H13V9H19V21Z" />
-                        </svg>
-                    </div>
-                    <div class="skill-name">Figma</div>
-                    <div class="skill-rating">
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star empty">★</span>
-                    </div>
-                </div>
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                            <path
-                                d="M18,16L16,14L18,12L16,10L18,8H20V16H18M6,16H4V8H6L8,10L6,12L8,14L6,16M15,11H13V9H11V15H13V13H15V15H17V9H15V11Z" />
-                        </svg>
-                    </div>
-                    <div class="skill-name">After Effects</div>
-                    <div class="skill-rating">
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star empty">★</span>
-                        <span class="star empty">★</span>
-                    </div>
-                </div>
-                <div class="skill-card fade-in">
-                    <div class="skill-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-                            <path d="M12,2L13.09,8.26L22,9L13.09,9.74L12,16L10.91,9.74L2,9L10.91,8.26L12,2Z" />
-                        </svg>
-                    </div>
-                    <div class="skill-name">Canva</div>
-                    <div class="skill-rating">
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
-                        <span class="star filled">★</span>
+                <div class="project-card">
+                    <img src="#" alt="Project 3">
+                    <div class="project-card-content">
+                        <h4>Portfolio Website</h4>
+                        <p>เว็บไซต์แสดงผลงาน responsive design พัฒนาด้วย HTML, CSS, JavaScript</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="skills" id="softskills" style="background:#f8f9ff;">
-        <div class="container">
-            <h2 style="text-align:center; font-size:36px; margin-bottom:50px; color:#222; font-weight:bold;">Soft Skills
-            </h2>
-            <div class="skills-grid">
-                <div class="skill-card fade-in">
-                    <div class="skill-icon" style="background:#e8f0ff; color:#667eea;">
-                        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M12 12c2.7 0 8 1.34 8 4v2H4v-2c0-2.66 5.3-4 8-4zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" />
-                        </svg>
-                    </div>
-                    <div class="skill-name">การทำงานเป็นทีม</div>
-                    <div class="skill-desc">สามารถทำงานร่วมกับผู้อื่นได้ดี รับฟังความคิดเห็น และช่วยเหลือกันในทีม</div>
-                </div>
-                <div class="skill-card fade-in">
-                    <div class="skill-icon" style="background:#e8f0ff; color:#667eea;">
-                        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm1 14.5v-2h-2v2h2zm0-4V7h-2v5.5h2z" />
-                        </svg>
-                    </div>
-                    <div class="skill-name">การแก้ปัญหา</div>
-                    <div class="skill-desc">มีทักษะในการวิเคราะห์และแก้ไขปัญหาเฉพาะหน้าได้อย่างมีประสิทธิภาพ</div>
-                </div>
-                <div class="skill-card fade-in">
-                    <div class="skill-icon" style="background:#e8f0ff; color:#667eea;">
-                        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm-7 2v-1a7 7 0 0 1 14 0v1H5z" />
-                        </svg>
-                    </div>
-                    <div class="skill-name">ความรับผิดชอบ</div>
-                    <div class="skill-desc">รับผิดชอบต่องานที่ได้รับมอบหมายและส่งงานตรงเวลา</div>
-                </div>
-                <div class="skill-card fade-in">
-                    <div class="skill-icon" style="background:#e8f0ff; color:#667eea;">
-                        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14H7v-2h5v2zm5-4H7v-2h10v2zm0-4H7V7h10v2z" />
-                        </svg>
-                    </div>
-                    <div class="skill-name">การสื่อสาร</div>
-                    <div class="skill-desc">สามารถสื่อสารและนำเสนอข้อมูลได้อย่างชัดเจน</div>
-                </div>
-                <div class="skill-card fade-in">
-                    <div class="skill-icon" style="background:#e8f0ff; color:#667eea;">
-                        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-2.83.48-5.48-1.51-5.96-4.34-.09-.5.36-.93.86-.93.41 0 .75.34.82.74.36 2.09 2.54 3.37 4.51 2.81 1.97-.56 3.17-2.62 2.61-4.59-.56-1.97-2.62-3.17-4.59-2.61-1.97.56-3.17 2.62-2.61 4.59.09.5-.36.93-.86.93-.41 0-.75-.34-.82-.74-.36-2.09-2.54-3.37-4.51-2.81-1.97.56-3.17 2.62-2.61 4.59.56 1.97 2.62 3.17 4.59 2.61 1.97-.56 3.17-2.62 2.61-4.59-.09-.5.36-.93.86-.93.41 0 .75.34.82.74.36 2.09 2.54 3.37 4.51 2.81 1.97-.56 3.17-2.62 2.61-4.59-.56-1.97-2.62-3.17-4.59-2.61z" />
-                        </svg>
-                    </div>
-                    <div class="skill-name">ความคิดสร้างสรรค์</div>
-                    <div class="skill-desc">มีความคิดสร้างสรรค์และสามารถนำเสนอไอเดียใหม่ๆ ได้</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="experience" id="experience" style="background:#f8f9ff;">
-        <div class="container">
-            <h2 style="text-align:center; font-size:36px; margin-bottom:50px; color:#222; font-weight:bold;">
-                ประสบการณ์การทำงาน</h2>
-            <div style="display:flex; flex-direction:column; gap:40px;">
-                <!-- งานปัจจุบัน -->
-                <div
-                    style="background:#fff; border-radius:16px; box-shadow:0 4px 24px rgba(0,0,0,0.06); display:flex; align-items:center; padding:40px 32px; gap:32px; max-width:900px; margin:0 auto;">
-                    <div
-                        style="background:#e8edfb; border-radius:12px; width:96px; height:96px; display:flex; align-items:center; justify-content:center;">
-                        <svg width="48" height="48" fill="none" viewBox="0 0 24 24">
-                            <path
-                                d="M20 7h-1V6a5 5 0 0 0-10 0v1H4a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zm-9-1a3 3 0 0 1 6 0v1h-6V6zm9 14H4V9h16v11z"
-                                fill="#5a60e7" />
-                        </svg>
-                    </div>
-                    <div style="flex:1;">
-                        <div style="display:flex; align-items:center; gap:10px;">
-                            <div style="font-size:22px; font-weight:bold; color:#222; margin-bottom:4px;">
-                                ตำแหน่งงานของคุณ</div>
-                            <span
-                                style="background:#e8edfb; color:#5a60e7; border-radius:12px; padding:4px 16px; font-size:15px; font-weight:bold;">ปัจจุบัน</span>
-                        </div>
-                        <div style="color:#555; margin-bottom:2px;">ชื่อบริษัท</div>
-                        <div style="color:#888; font-size:15px; margin-bottom:10px;">มกราคม 2565 - ปัจจุบัน</div>
-                        <ul style="color:#444; font-size:16px; padding-left:20px; margin:0;">
-                            <li>อธิบายความรับผิดชอบและผลงานสำคัญของคุณในตำแหน่งนี้</li>
-                            <li>ใช้คำกริยาที่แสดงการกระทำเพื่ออธิบายสิ่งที่คุณทำ</li>
-                            <li>รวมตัวเลขและผลลัพธ์ที่วัดได้เมื่อเป็นไปได้</li>
-                            <li>เน้นทักษะและความสำเร็จที่เกี่ยวข้องกับงานที่คุณกำลังสมัคร</li>
-                        </ul>
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="section-title">ข้อมูลการติดต่อ</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div class="contact-details">
+                        <h4>โทรศัพท์</h4>
+                        <p>093 220 6905</p>
                     </div>
                 </div>
-                <!-- งานก่อนหน้า -->
-                <div
-                    style="background:#fff; border-radius:16px; box-shadow:0 4px 24px rgba(0,0,0,0.06); display:flex; align-items:center; padding:40px 32px; gap:32px; max-width:900px; margin:0 auto;">
-                    <div
-                        style="background:#e8edfb; border-radius:12px; width:96px; height:96px; display:flex; align-items:center; justify-content:center;">
-                        <svg width="48" height="48" fill="none" viewBox="0 0 24 24">
-                            <path d="M4 22V10a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12" stroke="#5a60e7" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                            <rect x="2" y="7" width="20" height="5" rx="2" fill="#5a60e7" />
-                        </svg>
-                    </div>
-                    <div style="flex:1;">
-                        <div style="font-size:22px; font-weight:bold; color:#222; margin-bottom:4px;">ตำแหน่งงานก่อนหน้า
-                        </div>
-                        <div style="color:#555; margin-bottom:2px;">ชื่อบริษัทก่อนหน้า</div>
-                        <div style="color:#888; font-size:15px; margin-bottom:10px;">มิถุนายน 2563 - ธันวาคม 2564</div>
-                        <ul style="color:#444; font-size:16px; padding-left:20px; margin:0;">
-                            <li>อธิบายหน้าที่และผลงานที่สำคัญในตำแหน่งนี้</li>
-                            <li>เน้นทักษะที่ได้รับและประสบการณ์ที่เกี่ยวข้อง</li>
-                        </ul>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-details">
+                        <h4>อีเมล</h4>
+                        <p>chatdaporn2546@gmail.com</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact" id="contact" style="background:#fff; padding:80px 0;">
-        <div class="container">
-            <h2 style="text-align:center; font-size:36px; margin-bottom:40px; color:#222; font-weight:bold;">
-                ข้อมูลการติดต่อ</h2>
-            <div
-                style="max-width:420px; margin:0 auto; background:#f8f9ff; border-radius:20px; box-shadow:0 4px 24px rgba(0,0,0,0.06); padding:40px;">
-                <div style="display:flex; align-items:center; gap:18px; margin-bottom:28px;">
-                    <div
-                        style="background:#e8edfb; border-radius:12px; width:56px; height:56px; display:flex; align-items:center; justify-content:center;">
-                        <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
-                            <path
-                                d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.07 21 3 13.93 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2z"
-                                fill="#5a60e7" />
-                        </svg>
-                    </div>
-                    <div>
-                        <div style="font-weight:bold; color:#222; font-size:18px;">โทรศัพท์</div>
-                        <div style="color:#666; font-size:16px;">+66 xx xxx xxxx</div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <h4>ที่อยู่</h4>
+                        <p>กรุงเทพมหานคร, ประเทศไทย</p>
                     </div>
                 </div>
-                <div style="display:flex; align-items:center; gap:18px; margin-bottom:28px;">
-                    <div
-                        style="background:#e8edfb; border-radius:12px; width:56px; height:56px; display:flex; align-items:center; justify-content:center;">
-                        <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
-                            <path
-                                d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.01L12 13 4 6.01V6h16zm-8 7L4 8.01V18h16V8.01L12 13z"
-                                fill="#5a60e7" />
-                        </svg>
-                    </div>
-                    <div>
-                        <div style="font-weight:bold; color:#222; font-size:18px;">อีเมล</div>
-                        <div style="color:#666; font-size:16px;">your.email@example.com</div>
-                    </div>
-                </div>
-                <div style="display:flex; align-items:center; gap:18px; margin-bottom:28px;">
-                    <div
-                        style="background:#e8edfb; border-radius:12px; width:56px; height:56px; display:flex; align-items:center; justify-content:center;">
-                        <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
-                            <path
-                                d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"
-                                fill="#5a60e7" />
-                        </svg>
-                    </div>
-                    <div>
-                        <div style="font-weight:bold; color:#222; font-size:18px;">ที่อยู่</div>
-                        <div style="color:#666; font-size:16px;">กรุงเทพมหานคร, ประเทศไทย</div>
-                    </div>
-                </div>
-                <div style="display:flex; align-items:center; gap:18px;">
-                    <div
-                        style="background:#e8edfb; border-radius:12px; width:56px; height:56px; display:flex; align-items:center; justify-content:center;">
-                        <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
-                            <path
-                                d="M17 7a5 5 0 0 0-10 0c0 2.5 2.5 6.5 5 9.5 2.5-3 5-7 5-9.5zm-5 3a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"
-                                fill="#5a60e7" />
-                        </svg>
-                    </div>
-                    <div>
-                        <div style="font-weight:bold; color:#222; font-size:18px;">โซเชียลมีเดีย</div>
-                        <div style="display:flex; gap:12px; margin-top:6px;">
-                            <a href="#" style="color:#222;" aria-label="Facebook">
-                                <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0" />
-                                </svg>
-                            </a>
-                            <a href="#" style="color:#222;" aria-label="LinkedIn">
-                                <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11 19h-3v-9h3v9zm-1.5-10.28c-.97 0-1.75-.79-1.75-1.75s.78-1.75 1.75-1.75 1.75.79 1.75 1.75-.78 1.75-1.75 1.75zm13.5 10.28h-3v-4.5c0-1.08-.02-2.47-1.5-2.47-1.5 0-1.73 1.17-1.73 2.39v4.58h-3v-9h2.89v1.23h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.59v5.74z" />
-                                </svg>
-                            </a>
-                            <a href="#" style="color:#222;" aria-label="Instagram">
-                                <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.31.975.976 1.248 2.243 1.31 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.31 3.608-.976.975-2.243 1.248-3.608 1.31-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.31-.975-.976-1.248-2.243-1.31-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.31-3.608.976-.975 2.243-1.248 3.608-1.31C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.771.131 4.659.385 3.678 1.366c-.981.981-1.235 2.093-1.294 3.374C2.013 8.332 2 8.741 2 12c0 3.259.013 3.668.072 4.948.059 1.281.313 2.393 1.294 3.374.981.981 2.093 1.235 3.374 1.294C8.332 23.987 8.741 24 12 24s3.668-.013 4.948-.072c1.281-.059 2.393-.313 3.374-1.294.981-.981 1.235-2.093 1.294-3.374.059-1.28.072-1.689.072-4.948 0-3.259-.013-3.668-.072-4.948-.059-1.281-.313-2.393-1.294-3.374-.981-.981-2.093-1.235-3.374-1.294C15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z" />
-                                </svg>
-                            </a>
-                            <a href="#" style="color:#222;" aria-label="Twitter">
-                                <svg width="28" height="28" fill="currentColor" viewBox="0 0 24 24">
-                                    <path
-                                        d="M24 4.557a9.93 9.93 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724c-.951.564-2.005.974-3.127 1.195a4.92 4.92 0 0 0-8.384 4.482C7.691 8.095 4.066 6.13 1.64 3.161c-.542.929-.856 2.01-.857 3.17 0 2.188 1.115 4.117 2.823 5.254a4.904 4.904 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.936 4.936 0 0 1-2.224.084c.627 1.956 2.444 3.377 4.6 3.417A9.867 9.867 0 0 1 0 21.543a13.94 13.94 0 0 0 7.548 2.209c9.057 0 14.009-7.496 14.009-13.986 0-.213-.005-.425-.014-.636A10.012 10.012 0 0 0 24 4.557z" />
-                                </svg>
-                            </a>
+                <div class="contact-item">
+                    <div class="contact-icon">🔗</div>
+                    <div class="contact-details">
+                        <h4>โซเชียลมีเดีย</h4>
+                        <div class="social-icons">
+                            <a href="#" class="social-link">📘</a>
+                            <a href="#" class="social-link">💼</a>
+                            <a href="#" class="social-link">📷</a>
+                            <a href="#" class="social-link">🐦</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+    </main>
 
-
-         <footer>
-        <div class="footer-container">
-            <div class="footer-info">
-                <h3>ชื่อของคุณ</h3>
-                <p>ตำแหน่งงานของคุณ | นักพัฒนาเว็บไซต์</p>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <h3>ชัชฎาภรณ์ มูลซาว</h3>
+                <p>ตำแหน่งงานของคุณ | คอนเทนต์ครีเอเตอร์ (สาย TikTok/YouTube Shorts)</p>
             </div>
-            <div class="footer-social">
-                <a href="#" aria-label="Facebook">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-                </a>
-                <a href="#" aria-label="LinkedIn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                </a>
-                <a href="#" aria-label="Instagram">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                </a>
-                <a href="#" aria-label="Twitter">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
-                </a>
+            <div class="footer-right">
+                <div class="social-links">
+                    <a href="#" class="social-link">📘</a>
+                    <a href="#" class="social-link">💼</a>
+                    <a href="#" class="social-link">📷</a>
+                    <a href="#" class="social-link">🐦</a>
+                </div>
             </div>
         </div>
-        <hr>
-        <p class="footer-copyright">© 2023 ชื่อของคุณ. สงวนลิขสิทธิ์ทั้งหมด.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ชัชฎาภรณ์ มูลซาว. สงวนลิขสิทธิ์ทั้งหมด.</p>
+        </div>
     </footer>
 
-        <script>
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-
-        hamburger.addEventListener('click', () => {
-             if (navMenu.style.display === 'flex') {
-                navMenu.style.display = 'none';
-            } else {
-                navMenu.style.display = 'flex';
-            }
-        });
-        
+    <script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1115,46 +678,23 @@
             });
         });
 
-        // Fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
+        // Contact form submission (removed since we don't have form anymore)
 
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-            observer.observe(el);
-        });
-        
-        document.addEventListener('DOMContentLoaded', () => {
-             // Add mobile menu toggle logic
-            const logo = document.querySelector('.logo');
-
-            if (window.innerWidth <= 768) {
-                navMenu.style.display = 'none';
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(255, 255, 255, 0.15)';
+            } else {
+                header.style.background = 'rgba(255, 255, 255, 0.1)';
             }
-
-            // Also hide menu when a link is clicked on mobile
-            navMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    if(window.innerWidth <= 768) {
-                        navMenu.style.display = 'none';
-                    }
-                });
-            });
         });
-
+    </script>
+    <script>
+        document.getElementById("hamburger").addEventListener("click", function () {
+            const menu = document.querySelector(".nav-menu");
+            menu.classList.toggle("active");
+        });
     </script>
 </body>
 
