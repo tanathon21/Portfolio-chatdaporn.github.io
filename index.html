@@ -170,6 +170,7 @@
         .content-card h4 {
             color: white;
         }
+
         .content-card p,
         .content-card li {
             color: rgba(255, 255, 255, 0.9);
@@ -338,7 +339,7 @@
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            gap: 3rem;
             margin-top: 2rem;
         }
 
@@ -351,13 +352,33 @@
             transition: transform 0.3s ease;
         }
 
+        .project-card1 {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
         .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-card1:hover {
             transform: translateY(-10px);
         }
 
         .project-card img {
             width: 100%;
             height: 200px;
+            object-fit: cover;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+        }
+
+        .project-card1 {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
             background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
         }
@@ -371,7 +392,16 @@
             margin-bottom: 1rem;
         }
 
+        .project-card1 h4 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
         .project-card p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .project-card1 p {
             color: rgba(255, 255, 255, 0.8);
         }
 
@@ -446,7 +476,8 @@
         <!-- Hero Section -->
         <div class="hero">
             <div class="profile-circle">
-                <img src="\image\468800.jpg" alt="Profile"style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover;">
+                <img src="\image\468800.jpg" alt="Profile"
+                    style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover;">
             </div>
             <h1>สวัสดี! ฉันคือ ชัชฎาภรณ์ มูลซาว</h1>
             <p>คอนเทนต์ครีเอเตอร์ (สาย TikTok/YouTube Shorts)</p>
@@ -458,9 +489,15 @@
             <h2 class="section-title">About Me</h2>
             <div class="content-card">
                 <h3>เกี่ยวกับฉัน</h3>
-                <p><h4> —  สวัสดีค่ะ ฉันคือกุ๊กกิ๊ก — </h4></p>
-                    <p><h4>คอนเทนต์ครีเอเตอร์ที่มีความคิดสร้างสรรค์และขับเคลื่อนด้วยแรงบันดาลใจในการเรียนรู้และพัฒนาอย่างไม่หยุดนิ่ง
-ฉันเชี่ยวชาญในการคิดไอเดีย ถ่ายทำ และตัดต่อวิดีโอสั้นสำหรับ TikTok และ YouTube Shorts โดยมุ่งเน้นการเล่าเรื่องที่ดึงดูดสายตาผ่านภาพและการตัดต่อที่มีพลัง เพื่อสร้างคอนเทนต์ที่น่าจดจำและเชื่อมโยงกับผู้ชมได้จริง</h4></p>
+                <p>
+                <h4> — สวัสดีค่ะ ฉันคือกุ๊กกิ๊ก — </h4>
+                </p>
+                <p>
+                <h4>คอนเทนต์ครีเอเตอร์ที่มีความคิดสร้างสรรค์และขับเคลื่อนด้วยแรงบันดาลใจในการเรียนรู้และพัฒนาอย่างไม่หยุดนิ่ง
+                    ฉันเชี่ยวชาญในการคิดไอเดีย ถ่ายทำ และตัดต่อวิดีโอสั้นสำหรับ TikTok และ YouTube Shorts
+                    โดยมุ่งเน้นการเล่าเรื่องที่ดึงดูดสายตาผ่านภาพและการตัดต่อที่มีพลัง
+                    เพื่อสร้างคอนเทนต์ที่น่าจดจำและเชื่อมโยงกับผู้ชมได้จริง</h4>
+                </p>
             </div>
         </section>
 
@@ -557,48 +594,168 @@
         <section id="experience">
             <h2 class="section-title">Work Experience</h2>
             <div class="content-card">
-                <h3>Frontend Developer</h3>
-                <p><strong>บริษัท:</strong> [ชื่อบริษัท]</p>
-                <p><strong>ระยะเวลา:</strong> มกราคม 2023 - ปัจจุบัน</p>
-                <p><strong>หน้าที่:</strong> พัฒนาและดูแลเว็บไซต์ด้านหน้า ทำงานร่วมกับทีม UX/UI
-                    ในการแปลงดีไซน์เป็นเว็บไซต์ที่ใช้งานได้จริง</p>
+                <h3>Content Creater Tiktok</h3>
+                <p><strong>บริษัท:</strong> BEPROUD MEDICAL COMPANY LIMITED </p>
+                <p><strong>ระยะเวลา:</strong> เมษายน 2024 - ปัจจุบัน</p>
+                <p><strong>หน้าที่:</strong> ถ่ายทำคลิป วิดีโอ ตัดต่อคลิป ทำเสียงพากย์ ค้นคว้าหัวข้อ หรือเขียนสคริปต์สำหรับผู้พูด วางแผนและตรวจสอบสคริปต์</p>
+                <p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;ตัดต่อและอัปโหลดคลิปลงแพลตฟอร์มต่างๆ เช่น TikTok, Facebook, Instagram, Reels และ YouTube</p>
             </div>
-            <div class="content-card">
-                <h3>Web Developer Intern</h3>
-                <p><strong>บริษัท:</strong> [ชื่อบริษัท]</p>
-                <p><strong>ระยะเวลา:</strong> มิถุนายน 2022 - ธันวาคม 2022</p>
-                <p><strong>หน้าที่:</strong> ช่วยพัฒนาเว็บแอพพลิเคชั่น เรียนรู้เกี่ยวกับ best practices ในการเขียนโค้ด
-                </p>
-            </div>
-        </section>
 
-        <!-- Projects Section -->
-        <section id="projects">
-            <h2 class="section-title"><a href="https://drive.google.com/drive/folders/1Fwn42TQkRDlCmhDWvSUFGh6Kb_JbWEVM" target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: none;">Projects</a></h2> 
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="#" alt="Project 1">
-                    <div class="project-card-content">
-                        <h4>E-commerce Website</h4>
-                        <p>เว็บไซต์ขายของออนไลน์ที่สมบูรณ์ พัฒนาด้วย React และ Node.js</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="#" alt="Project 2">
-                    <div class="project-card-content">
-                        <h4>Task Management App</h4>
-                        <p>แอพพลิเคชั่นจัดการงาน พัฒนาด้วย Vue.js และ Express.js</p>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="#" alt="Project 3">
-                    <div class="project-card-content">
-                        <h4>Portfolio Website</h4>
-                        <p>เว็บไซต์แสดงผลงาน responsive design พัฒนาด้วย HTML, CSS, JavaScript</p>
-                    </div>
-                </div>
+            <div class="content-card">
+                <h3>Freelance</h3>
+                <p><strong>บริษัท:</strong> - </p>
+                <p><strong>ระยะเวลา:</strong> พฤษภาคม 2023 - เมษายน 2024 </p>
+                <p><strong>หน้าที่:</strong> แอดมิน: ตอบแชทลูกค้าและไลฟ์สดขายสินค้าบนแพลตฟอร์ม TikTok</p>
+                <p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; คอนเทนต์ครีเอเตอร์: ถ่ายคลิปสินค้าลูกค้า พากย์เสียง และตัดต่อคลิปสำหรับแพลตฟอร์ม เช่น TikTok, Reels และ Facebook</p>
+
+            </div>
+
+            <div class="content-card">
+                <h3><p><strong>บริษัท:</strong> BAIFA E-COMMERCE CO., LTD.</p></h3>
+                <p> — </p>
+                <p><strong>ระยะเวลา:</strong> สิงหาคม 2022 - เมษายน 2023 </p>
+                <p><strong>หน้าที่: แอดมิน: ตอบแชทลูกค้าและไลฟ์สดขายสินค้าบนแพลตฟอร์ม TikTok</strong> </p>
+                <p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; คอนเทนต์ครีเอเตอร์: ตัดต่อคลิปและถ่ายทำสินค้าเพื่อเผยแพร่บนแพลตฟอร์ม TikTok</p>
+                <p>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; พัฒนากลยุทธ์การขาย: วางแผนและพัฒนากลยุทธ์การขายให้กับบริษัท</p>
+                <p> — </p>
+                <p><strong>ระยะเวลา:</strong> กุมภาพันธ์ 2022 - สิงหาคม 2022 </p>
+                <p><strong>หน้าที่:</strong> ดูแลการจัดการสต็อกของบริษัท ตรวจสอบสินค้าที่เข้ามา และตรวจเช็คสินค้าที่ขายออกไป รวมถึงสินค้าที่เสียหายและสินค้าที่ค้างสต็อก</p>
+                <p> — </p>
+                <p><strong>ระยะเวลา:</strong> ธันวาคม 2021 - กุมภาพันธ์ 2022 </p>
+                <p><strong>หน้าที่:</strong> จัดพิมพ์บิลสำหรับ Lazada และ Shopee รวมทั้งจัดการใบแจ้งหนี้ในระบบ โดยประสานงานหลักกับบริษัทขนส่ง</p>
+                <p> — </p>
+                <p><strong>ระยะเวลา:</strong> ตุลาคม 2021 - ธันวาคม 2021 </p>
+                <p><strong>หน้าที่:</strong> ดูแลระบบการแพ็กสินค้าสำหรับ Lazada และ Shopee</p>
+
             </div>
         </section>
+<section id="projects">
+
+    <h2 class="section-title"><a href="https://drive.google.com/drive/folders/1Fwn42TQkRDlCmhDWvSUFGh6Kb_JbWEVM"
+            target="_blank" rel="noopener noreferrer" style="color: #fff; text-decoration: none;">Projects
+            (ตัวอย่างคลิป TikTok)</a></h2>
+
+    <div style="text-align: center; margin-bottom: 2rem;">
+        <button class="btn filter-btn" data-filter="all">แสดงทั้งหมด</button>
+        <button class="btn filter-btn" data-filter="tiktok">ช่อง Tiktok</button>
+        <button class="btn filter-btn" data-filter="knowlage">Knowledge</button>
+        <button class="btn filter-btn" data-filter="content-review">Content Review</button>
+    </div>
+
+    <div class="projects-grid">
+
+        <div class="project-card1" data-category="tiktok">
+            <div class="project-card-content">
+                <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@dr_lhing_beproudclinic"
+                    data-unique-id="dr_lhing_beproudclinic" data-embed-type="creator"
+                    style="max-width: 780px; min-width: 288px; border-radius: 15px;">
+                    <section> <a target="_blank"
+                            href="https://www.tiktok.com/@dr_lhing_beproudclinic?refer=creator_embed">@dr_lhing_beproudclinic</a>
+                    </section>
+                </blockquote>
+                <script async src="https://www.tiktok.com/embed.js"></script>
+                <h4>หมอหลิง บีพราวด์ จักษุแพทย์</h4>
+                <p>อ.หมอหลิงจักษุแพทย์ตกแต่งและเสริมสร้างเฉพาะทาง Oculoplastic</p>
+                <h4>คลิป Knowledge TikTok ของหมอหลิง บีพราวด์ คลินิก</h4>
+                <a href="https://vt.tiktok.com/ZSBryJQsB/" target="_blank" class="social-link" style="color:#fff;">🎬 คลิปที่ 1</a><p></p>
+                <a href="https://vt.tiktok.com/ZSBrUb5Tx/" target="_blank" class="social-link" style="color:#fff;">🎬 คลิปที่ 2</a><p></p>
+                <a href="https://vt.tiktok.com/ZSBrU3APT/" target="_blank" class="social-link" style="color:#fff;">🎬 คลิปที่ 3</a><p></p>
+                <a href="https://vt.tiktok.com/ZSBrUsVEV/" target="_blank" class="social-link" style="color:#fff;">🎬 คลิปที่ 4</a><p></p>
+                <a href="https://vt.tiktok.com/ZSBrU3B2C/" target="_blank" class="social-link" style="color:#fff;">🎬 คลิปที่ 5</a><p></p>
+                <a href="https://vt.tiktok.com/ZSBryJRjk/" target="_blank" class="social-link" style="color:#fff;">🎬 คลิปที่ 6</a><p></p>
+                <a href="https://vt.tiktok.com/ZSBryL4LY/" target="_blank" class="social-link" style="color:#fff;">🎬 คลิปที่ 7</a>
+                
+                <h4>คลิป Content Review TikTok ของหมอหลิง บีพราวด์ คลินิก</h4>
+                <a href="https://vt.tiktok.com/ZSBrywMxQ/" target="_blank" class="social-link" style="color:#fff;">🎬 คลิปที่ 1</a><p></p>
+                <a href="https://vt.tiktok.com/ZSBrywAA6/" target="_blank" class="social-link" style="color:#fff;">🎬 คลิปที่ 2</a><p></p>
+                <a href="https://vt.tiktok.com/ZSBryW1bj/" target="_blank" class="social-link" style="color:#fff;">🎬 คลิปที่ 3</a><p></p>
+                <a href="https://vt.tiktok.com/ZSBrygnyr/" target="_blank" class="social-link" style="color:#fff;">🎬 คลิปที่ 4</a><p></p>
+                <a href="https://vt.tiktok.com/ZSBryTC4q/" target="_blank" class="social-link" style="color:#fff;">🎬 คลิปที่ 5</a><p></p>
+                <a href="https://vt.tiktok.com/ZSBrySr19/" target="_blank" class="social-link" style="color:#fff;">🎬 คลิปที่ 6</a><p></p>
+                <a href="https://vt.tiktok.com/ZSBryyDmg/" target="_blank" class="social-link" style="color:#fff;">🎬 คลิปที่ 7</a>
+
+            </div>
+        </div>
+
+        <div class="project-card" data-category="knowlage">
+            <div class="project-card-content">
+                <h4>Knowledge</h4>
+                <p>อย่าทำแบบนี้เลยนะ🥹 หมอขอเตือน⚠️#หมอหลิงบีพราวด์ #บีพราวด์คลินิก #ตาสองชั้น #รีวิวบิวตี้
+                    #รีวิวศัลยกรรม #จักษุแพทย์ #โรคตา #knowledge #ความรู้</p>
+                <blockquote class="tiktok-embed"
+                    cite="https://www.tiktok.com/@dr_lhing_beproudclinic/video/7442686426967248135"
+                    data-video-id="7442686426967248135"
+                    style="max-width: 605px;min-width: 325px; border-radius: 15px;">
+                    <section> <a target="_blank" title="@dr_lhing_beproudclinic"
+                            href="https://www.tiktok.com/@dr_lhing_beproudclinic?refer=embed">@dr_lhing_beproudclinic</a>
+                        อย่าทำแบบนี้เลยนะ🥹 หมอขอเตือน⚠️<a title="หมอหลิงบีพราวด์" target="_blank"
+                            href="https://www.tiktok.com/tag/%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%AB%E0%B8%A5%E0%B8%B4%E0%B8%87%E0%B8%9A%E0%B8%B5%E0%B8%9E%E0%B8%A3%E0%B8%B2%E0%B8%A7%E0%B8%94%E0%B9%8C?refer=embed">#หมอหลิงบีพราวด์</a>
+                        <a title="บีพราวด์คลินิก" target="_blank"
+                            href="https://www.tiktok.com/tag/%E0%B8%9A%E0%B8%B5%E0%B8%9E%E0%B8%A3%E0%B8%B2%E0%B8%A7%E0%B8%94%E0%B9%8C%E0%B8%84%E0%B8%A5%E0%B8%B4%E0%B8%99%E0%B8%B4%E0%B8%81?refer=embed">#บีพราวด์คลินิก</a>
+                        <a title="ตาสองชั้น" target="_blank"
+                            href="https://www.tiktok.com/tag/%E0%B8%95%E0%B8%B2%E0%B8%AA%E0%B8%AD%E0%B8%87%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99?refer=embed">#ตาสองชั้น</a>
+                        <a title="รีวิวบิวตี้" target="_blank"
+                            href="https://www.tiktok.com/tag/%E0%B8%A3%E0%B8%B5%E0%B8%A7%E0%B8%B4%E0%B8%A7%E0%B8%9A%E0%B8%B4%E0%B8%A7%E0%B8%95%E0%B8%B5%E0%B9%89?refer=embed">#รีวิวบิวตี้</a>
+                        <a title="รีวิวศัลยกรรม" target="_blank"
+                            href="https://www.tiktok.com/tag/%E0%B8%A3%E0%B8%B5%E0%B8%A7%E0%B8%B4%E0%B8%A7%E0%B8%A8%E0%B8%B1%E0%B8%A5%E0%B8%A2%E0%B8%81%E0%B8%A3%E0%B8%A3%E0%B8%A1?refer=embed">#รีวิวศัลยกรรม</a>
+                        <a title="จักษุแพทย์" target="_blank"
+                            href="https://www.tiktok.com/tag/%E0%B8%88%E0%B8%B1%E0%B8%81%E0%B8%A9%E0%B8%B8%E0%B9%81%E0%B8%9E%E0%B8%97%E0%B8%A2%E0%B9%8C?refer=embed">#จักษุแพทย์</a>
+                        <a title="โรคตา" target="_blank"
+                            href="https://www.tiktok.com/tag/%E0%B9%82%E0%B8%A3%E0%B8%84%E0%B8%95%E0%B8%B2?refer=embed">#โรคตา</a>
+                        <a title="knowledge" target="_blank"
+                            href="https://www.tiktok.com/tag/knowledge?refer=embed">#knowledge</a> <a
+                            title="ความรู้" target="_blank"
+                            href="https://www.tiktok.com/tag/%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%A3%E0%B8%B9%E0%B9%89?refer=embed">#ความรู้</a>
+                        <a target="_blank" title="♬ Mysterious and sad BGM(1120058) - S and N"
+                            href="https://www.tiktok.com/music/Mysterious-and-sad-BGM-1120058-7021220308539410434?refer=embed">♬
+                            Mysterious and sad BGM(1120058) - S and N</a>
+                    </section>
+                </blockquote>
+                <script async src="https://www.tiktok.com/embed.js"></script>
+            </div>
+        </div>
+
+        <div class="project-card" data-category="content-review">
+            <div class="project-card-content">
+                <h4>Content Review</h4>
+                <p>เพิ่มขึ้นอีกนิด👀 ดูดีขึ้นเยอะเลย✨#หมอหลิงบีพราวด์ #บีพราวด์คลินิก #รีวิวบิวตี้
+                    #beproudclinic #ตาสองชั้นหมอหลิง #ตาสองชั้น #tiktokuni #รีวิวศัลยกรรม</p>
+                <blockquote class="tiktok-embed"
+                    cite="https://www.tiktok.com/@dr_lhing_beproudclinic/video/7434155922143857938"
+                    data-video-id="7434155922143857938"
+                    style="max-width: 605px;min-width: 325px; border-radius: 15px;">
+                    <section> <a target="_blank" title="@dr_lhing_beproudclinic"
+                            href="https://www.tiktok.com/@dr_lhing_beproudclinic?refer=embed">@dr_lhing_beproudclinic</a>
+                        เพิ่มขึ้นอีกนิด👀 ดูดีขึ้นเยอะเลย✨<a title="หมอหลิงบีพราวด์" target="_blank"
+                            href="https://www.tiktok.com/tag/%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%B2%E0%B8%AB%E0%B8%A5%E0%B8%B4%E0%B8%87%E0%B8%9A%E0%B8%B5%E0%B8%9E%E0%B8%A3%E0%B8%B2%E0%B8%A7%E0%B8%94%E0%B9%8C?refer=embed">#หมอหลิงบีพราวด์</a>
+                        <a title="บีพราวด์คลินิก" target="_blank"
+                            href="https://www.tiktok.com/tag/%E0%B8%9A%E0%B8%B5%E0%B8%9E%E0%B8%A3%E0%B8%B2%E0%B8%A7%E0%B8%94%E0%B9%8C%E0%B8%84%E0%B8%A5%E0%B8%B4%E0%B8%99%E0%B8%B4%E0%B8%81?refer=embed">#บีพราวด์คลินิก</a>
+                        <a title="รีวิวบิวตี้" target="_blank"
+                            href="https://www.tiktok.com/tag/%E0%B8%A3%E0%B8%B5%E0%B8%A7%E0%B8%B4%E0%B8%A7%E0%B8%9A%E0%B8%B4%E0%B8%A7%E0%B8%95%E0%B8%B5%E0%B9%89?refer=embed">#รีวิวบิวตี้</a>
+                        <a title="beproudclinic" target="_blank"
+                            href="https://www.tiktok.com/tag/beproudclinic?refer=embed">#beproudclinic</a> <a
+                            title="ตาสองชั้นหมอหลิง" target="_blank"
+                            href="https://www.tiktok.com/tag/%E0%B8%95%E0%B8%B2%E0%B8%AA%E0%B8%AD%E0%B8%87%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99%E0%B8%AB%E0%B8%A1%E0%B8%AD%E0%B8%AB%E0%B8%A5%E0%B8%B4%E0%B8%87?refer=embed">#ตาสองชั้นหมอหลิง</a>
+                        <a title="ตาสองชั้น" target="_blank"
+                            href="https://www.tiktok.com/tag/%E0%B8%95%E0%B8%B2%E0%B8%AA%E0%B8%AD%E0%B8%87%E0%B8%8A%E0%B8%B1%E0%B9%89%E0%B8%99?refer=embed">#ตาสองชั้น</a>
+                        <a title="tiktokuni" target="_blank"
+                            href="https://www.tiktok.com/tag/tiktokuni?refer=embed">#tiktokuni</a> <a
+                            title="รีวิวศัลยกรรม" target="_blank"
+                            href="https://www.tiktok.com/tag/%E0%B8%A3%E0%B8%B5%E0%B8%A7%E0%B8%B4%E0%B8%A7%E0%B8%A8%E0%B8%B1%E0%B8%A5%E0%B8%A2%E0%B8%81%E0%B8%A3%E0%B8%A3%E0%B8%A1?refer=embed">#รีวิวศัลยกรรม</a>
+                        <a target="_blank" title="♬ เสียงต้นฉบับ  - หมอหลิง บีพราวด์ จักษุแพทย์"
+                            href="https://www.tiktok.com/music/เสียงต้นฉบับ-หมอหลิง-บีพราวด์-จักษุแพทย์-7434156021902396177?refer=embed">♬
+                            เสียงต้นฉบับ - หมอหลิง บีพราวด์ จักษุแพทย์</a> </section>
+                </blockquote>
+                <script async src="https://www.tiktok.com/embed.js"></script>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
 
         <!-- Contact Section -->
         <section id="contact">
@@ -630,10 +787,8 @@
                     <div class="contact-details">
                         <h4>โซเชียลมีเดีย</h4>
                         <div class="social-icons">
-                            <a href="#" class="social-link">📘</a>
-                            <a href="#" class="social-link">💼</a>
-                            <a href="#" class="social-link">📷</a>
-                            <a href="#" class="social-link">🐦</a>
+                            <a href="https://www.facebook.com/chatdaporn.moonsaw?locale=th_TH" target="_blank" class="social-link">📘</a><p>Facebook : Chatdaporn Moonsaw </p>
+                            <a href="#" class="social-link">💼</a><p>Line : </p>
                         </div>
                     </div>
                 </div>
@@ -648,13 +803,13 @@
                 <h3>ชัชฎาภรณ์ มูลซาว</h3>
                 <p>ตำแหน่งงานของคุณ | คอนเทนต์ครีเอเตอร์ (สาย TikTok/YouTube Shorts)</p>
             </div>
-            <div class="footer-right">
+            <!--<div class="footer-right">
                 <div class="social-links">
-                    <a href="#" class="social-link">📘</a>
+                    <a href="#" class="social-link"><img src="image/facebooklogo.png" width="65px" height="45px"></a>
                     <a href="#" class="social-link">💼</a>
                     <a href="#" class="social-link">📷</a>
                     <a href="#" class="social-link">🐦</a>
-                </div>
+                </div>-->
             </div>
         </div>
         <div class="footer-bottom">
@@ -695,6 +850,21 @@
             menu.classList.toggle("active");
         });
     </script>
+<script>
+    document.querySelectorAll('.filter-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+            // Select both .project-card and .project-card1
+            document.querySelectorAll('.project-card, .project-card1').forEach(card => {
+                if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
 </body>
 
 </html>
