@@ -476,17 +476,18 @@
         <!-- Hero Section -->
         <div class="hero">
             <div class="profile-circle">
-                <img src="\image\468800.jpg" alt="Profile"
+                <img src="/image/468800.jpg" alt="Profile"
                     style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover;">
             </div>
             <h1>ชัชฎาภรณ์ มูลซาว</h1>
+
             <p id="current-position" style="
     font-size: 1rem;
     color: #ffd1dc;
     margin-top: 0.5rem;
     font-weight: bold;
     letter-spacing: 1px;
-"></p>
+">🌸 ปัจจุบันทำตำแหน่ง Content creator & Editor 🧸✨</p>
             <a href="#about" class="btn">เรียนรู้เพิ่มเติม</a>
         </div>
 
@@ -496,15 +497,6 @@
             <div class="content-card">
                 <h3>เกี่ยวกับฉัน</h3>
                 <p>
-                <h4> — สวัสดีค่ะ ฉันคือกุ๊กกิ๊ก — </h4>
-                </p>
-                <p>
-                <h4>
-                    สวัสดี ฉันชื่อกุ๊กกิ๊ก ฉันสนุกกับการเรียนรู้สิ่งใหม่ๆ
-                    และมุ่งมั่นที่จะเติบโตและเปลี่ยนแปลงตนเองเพื่อประสบการณ์ที่ดีขึ้นและการพัฒนาตนเอง
-                </h4>
-                </p>
-                                <p>
                 <h4> — Hello, I'm Gookgik. — </h4>
                 </p>
                 <p>
@@ -1333,42 +1325,6 @@
             });
         });
     </script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const text = "🌸 ปัจจุบันทำตำแหน่ง Content creator & Editor 🧸✨";
-            const element = document.getElementById("current-position");
-            let index = 0;
-            let deleting = false;
-
-            function type() {
-                if (!deleting) {
-                    element.innerHTML = text.substring(0, index + 1);
-                    index++;
-                    if (index === text.length) {
-                        setTimeout(() => {
-                            deleting = true;
-                            type();
-                        }, 1500); // รอหลังพิมพ์เสร็จ
-                        return;
-                    }
-                } else {
-                    element.innerHTML = text.substring(index, text.length);
-                    index++;
-                    if (index > text.length) {
-                        index = 0;
-                        deleting = false;
-                    }
-                }
-
-                setTimeout(type, 80);
-            }
-
-            type();
-        });
-    </script>
-
-
 
 </body>
 
